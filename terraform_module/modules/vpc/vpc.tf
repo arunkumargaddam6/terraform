@@ -6,5 +6,5 @@ resource "aws_vpc" "default" {
   }
 }
 output "vpc_id22" {
-  vlaue = "${aws_vpc.default.id}"
+  value = "${aws_vpc.default.id}"
 }

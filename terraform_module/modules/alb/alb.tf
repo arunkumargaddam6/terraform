@@ -1,7 +1,7 @@
 ## ALB
 resource "aws_alb" "demo_eu_alb" {
   name            = "demo-eu-alb"
-  subnets         = ["${var.subnet_id}"]
+  subnets         = ["${var.subnet}"]
   security_groups = ["${aws_security_group.lb_sg.id}"]
   enable_http2    = "true"
   idle_timeout    = 600
@@ -26,7 +26,7 @@ resource "aws_alb_target_group" "nginx" {
   name       = "nginx"
   port       = 80
   protocol   = "HTTP"
-  vpc_id     = "${var.vpc_id}"
+  vpc_id     = "${var.vpc_cidr}"
   depends_on = ["aws_alb.demo_eu_alb"]
 
   stickiness {

@@ -9,11 +9,13 @@ provider "aws" {
 
 # Modules
 
-module "vpc" {
-  source = ".//modules/vpc"
-  }
+#module "vpc" {
+  #source = ".//modules/vpc"
+  #}
 module "alb" {
-  source = ".//modules/alb"
-  vpc_id = "${module.vpc.vpc_id22}"
-  subnet_id = "${module.vpc.subnet}"
+  source = ".//modules/vpc"
+  vpc_cidr = "${modules.vpc_id22}"
+  subnet = "${modules.subnet}"
   }
+  
+

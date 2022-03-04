@@ -1,3 +1,4 @@
+
 data "aws_instance" "temp" {
   instance_tags = {
       "Name" = "${var.tags}"
@@ -7,7 +8,6 @@ data "aws_instance" "temp" {
   output "ppt"{
       value = data.aws_instance.temp
   }
-
  data "aws_vpc" "temp1"{
      default = true
  }
