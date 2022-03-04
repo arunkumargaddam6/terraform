@@ -7,24 +7,24 @@ provider "aws" {
 #modules
 
 module "internetgtway" {
-  source = ".//internetgtway"
-  vpc_id = "module.vpcid.vpc_id12"
+  source = ".//modules/internetgtway"
+  vpc_id = "${module.vpcid.vpc_id12}"
 }
 module "routetable" {
-  source = ".//routetable"
+  source = ".//modules/routetable"
   vpc_id = "module.vpcid.vpc_id12"
- gateway_id = "module.internetgtway.ig1"
+ gateway_id = "${module.internetgtway.ig1}"
 }
 module "securitygrp" {
-  source = ".//securitygrp"
-  vpc_id = "module.vpcid.vpc_id12"
+  source = ".//modules/securitygrp"
+  vpc_id = "${module.vpcid.vpc_id12}"
 }
 module "subnet" {
-  source = ".//subnet"
-  vpc_id = "module.vpcid.vpc_id12"
+  source = ".//modules/subnet"
+  vpc_id = "${module.vpcid.vpc_id12}"
 }
 module "vpcid" {
-  source = ".//vpcid"
+  source = ".//modules/vpcid"
 }
 
 
