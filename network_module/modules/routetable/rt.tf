@@ -6,11 +6,11 @@ resource "aws_route_table" "public-subnet-in-us-east" {
   }
 }
 resource "aws_route_table_association" "public-subnet-in-us-east-association" {
-  subnet_id      = "${aws_subnet.public-subnet-in-us-east.id}"
+  subnet_id      = "${var.subnet_id}"
   route_table_id = "${aws_route_table.public-subnet-in-us-east.id}"
 }
 
-output "route_id" {
+#output "route_id" {
   
-  value = "${aws_route_table.public-subnet-in-us-east.id}"
-}
+  #value = "${aws_route_table.public-subnet-in-us-east.id}"
+#}

@@ -6,6 +6,6 @@ resource "aws_internet_gateway" "default" {
   }
 }
 output "ig1" {
-  value = "aws_internet_gateway.default.id"
+  value = "${aws_internet_gateway.default.id}"
   
 }

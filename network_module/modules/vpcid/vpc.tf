@@ -6,6 +6,6 @@ resource "aws_vpc" "default" {
   }
 }
 output "vpc_id12" {
-value = "aws_vpc.default.id"
+value = "${aws_vpc.default.id}"
   
 }

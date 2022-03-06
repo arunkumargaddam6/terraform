@@ -10,6 +10,5 @@ resource "aws_subnet" "public-subnet-in-us-east" {
 }
 output "public_subnet" {
 
-    value = aws_subnet.public-subnet-in-us-east.id
-  
+    value = "${aws_subnet.public-subnet-in-us-east.id}"  
 }
